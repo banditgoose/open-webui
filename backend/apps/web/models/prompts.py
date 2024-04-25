@@ -21,7 +21,7 @@ class Prompt(Model):
     user_id = CharField()
     title = CharField()
     content = TextField()
-    timestamp = DateField()
+    timestamp = IntegerField()
 
     class Meta:
         database = DB

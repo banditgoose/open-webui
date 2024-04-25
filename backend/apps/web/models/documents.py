@@ -29,7 +29,7 @@ class Document(Model):
     filename = CharField()
     content = TextField(null=True)
     user_id = CharField()
-    timestamp = DateField()
+    timestamp = IntegerField()
 
     class Meta:
         database = DB

@@ -20,7 +20,7 @@ class Modelfile(Model):
     tag_name = CharField(unique=True)
     user_id = CharField()
     modelfile = TextField()
-    timestamp = DateField()
+    timestamp = IntegerField()
 
     class Meta:
         database = DB

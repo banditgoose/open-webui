@@ -508,3 +508,14 @@ LITELLM_PROXY_PORT = int(os.getenv("LITELLM_PROXY_PORT", "14365"))
 if LITELLM_PROXY_PORT < 0 or LITELLM_PROXY_PORT > 65535:
     raise ValueError("Invalid port number for LITELLM_PROXY_PORT")
 LITELLM_PROXY_HOST = os.getenv("LITELLM_PROXY_HOST", "127.0.0.1")
+
+
+####################################
+# Database
+####################################
+
+PG_HOST = os.environ.get("PG_HOST", "localhost")
+PG_PORT = os.environ.get("PG_PORT", "5432")
+PG_USER = os.environ.get("PG_USER", "postgres")
+PG_DB = os.environ.get("PG_DB", "webui")
+PG_PASS = os.environ.get("PG_PASS", "password")

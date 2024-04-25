@@ -1,6 +1,6 @@
 from peewee import *
 from peewee_migrate import Router
-from config import SRC_LOG_LEVELS, DATA_DIR
+from config import SRC_LOG_LEVELS, DATA_DIR, PG_HOST, PG_PORT, PG_USER, PG_DB, PG_PASS
 import os
 import logging
 
@@ -16,7 +16,9 @@ else:
     pass
 
 
-DB = SqliteDatabase(f"{DATA_DIR}/webui.db")
+# TODO: set up a foolproof migration or rely on a new env variable to use postgres
+DB = PostgresqlDatabase(user=PG_USER, password=PG_PASS,
+                        host=PG_HOST, port=PG_PORT, database=PG_DB)
 router = Router(DB, migrate_dir="apps/web/internal/migrations", logger=log)
 router.run()
 DB.connect(reuse_if_open=True)

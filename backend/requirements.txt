@@ -15,6 +15,7 @@ requests
 aiohttp
 peewee
 peewee-migrate
+psycopg2
 bcrypt
 
 litellm==1.35.17
